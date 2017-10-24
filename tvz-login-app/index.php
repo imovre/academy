@@ -18,6 +18,7 @@ $users = $stmt->fetchAll();
 ?>
 
 <div class="container content-wrapper">
+  <a href="add.php"><span class="oi oi-plus"></span></a>
   <table class="table table-hover">
     <thead>
     <tr>
@@ -25,6 +26,7 @@ $users = $stmt->fetchAll();
       <th>Email</th>
       <th>First Name</th>
       <th>Last Name</th>
+      <th>Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -34,6 +36,10 @@ $users = $stmt->fetchAll();
       <td><?= $user['email'] ?></td>
       <td><?= $user['first_name'] ?></td>
       <td><?= $user['last_name'] ?></td>
+      <td>
+        <a href="#"><span class="oi oi-pencil"></span></a>
+        <a href="delete.php?id=<?= $user['id'] ?>"><span class="oi oi-delete"></span></a>
+      </td>
     </tr>
     <?php endforeach; ?>
     </tbody>
