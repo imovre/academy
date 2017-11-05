@@ -1,14 +1,14 @@
 <?php
 require_once 'head.php';
 if(!isset($_GET['id'])) {
-  die('ne postoji parametar id');
+  die('there is no ID parameter');
 }
 
 $id = (int)$_GET['id'];
 $logiraniId = (int)$_SESSION['user']['id'];
 
 if($id === $logiraniId) {
-    die('ne mozete sami sebe obrisati (idiot)');
+    die('you cannot delete yourself');
 }
 
 $sql = 'DELETE FROM users WHERE id = :id';

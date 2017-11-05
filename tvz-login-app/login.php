@@ -1,6 +1,5 @@
 <?php
 require_once 'head.php';
-echo $head;
 
 // redirect if logged in
 if(isset($_SESSION['user'])) {
@@ -18,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   $password = $_POST['password'];
 
   // get user from the database
-  $sql = 'SELECT id, email, password, first_name, last_name FROM users WHERE email = :email';
+  $sql = 'SELECT id, email, password, first_name, last_name, is_active FROM users WHERE email = :email';
   $stmt = $db->prepare($sql);
   $stmt->bindParam(':email', $email);
   $stmt->execute();
@@ -31,6 +30,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   // if user doesn't exist
   if(!$user) { die($errorMessage); }
 
+  // check is the user active
+  if($user['is_active'] !== '1') {
+    die('user not active');
+  }
+
   // check if the password is OK
   if(!password_verify($password, $user['password'])) { die($errorMessage); }
 
@@ -41,6 +45,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   header('Location: index.php');
   die;
 }
+
+echo $head;
 
 ?>
 

@@ -11,7 +11,7 @@ echo $head;
 echo $header;
 
 // get users
-$sql = 'SELECT id, email, first_name, last_name FROM users';
+$sql = 'SELECT id, email, first_name, last_name, is_active FROM users';
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $users = $stmt->fetchAll();
@@ -31,14 +31,23 @@ $users = $stmt->fetchAll();
     </thead>
     <tbody>
     <?php foreach($users as $user): ?>
-    <tr>
+    <tr class="<?= $user['is_active'] !== '1' ? 'inactive' : '' ?>">
       <th scope="row"><?= $user['id'] ?></th>
       <td><?= $user['email'] ?></td>
       <td><?= $user['first_name'] ?></td>
       <td><?= $user['last_name'] ?></td>
       <td>
-        <a href="#"><span class="oi oi-pencil"></span></a>
+        <a href="edit.php?id=<?= $user['id'] ?>""><span class="oi oi-pencil"></span></a>
         <a href="delete.php?id=<?= $user['id'] ?>"><span class="oi oi-delete"></span></a>
+
+        <?php $isMyId = $user['id'] === $_SESSION['user']['id']; ?>
+        <?php if(!$isMyId): ?>
+          <?php if($user['is_active'] !== '1'): ?>
+            <a href="change_activation.php?id=<?= $user['id'] ?>"><span class="oi oi-check"></span></a>
+          <?php else: ?>
+            <a href="change_activation.php?id=<?= $user['id'] ?>"><span class="oi oi-ban"></span></a>
+          <?php endif; ?>
+        <?php endif; ?>
       </td>
     </tr>
     <?php endforeach; ?>

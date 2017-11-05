@@ -17,3 +17,11 @@ footer {
   text-align: center;
   line-height: 45px;
 }
+
+/* blocked users */
+tr.inactive {
+  background-color: #d9534f;
+  color: white;
+}
+
+tr.inactive:hover { background-color: #d9534f !important; }
