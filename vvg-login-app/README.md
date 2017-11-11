@@ -12,7 +12,3 @@ This repository is \*only\* for educational purposes and is intended for student
 ## Login credentials
 email: dlozic@vvg.hr
 password: vvg
-
-## Screenshots
-![login](img/login.png)
-![users](img/users.png)
