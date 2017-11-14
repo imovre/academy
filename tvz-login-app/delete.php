@@ -16,5 +16,5 @@ $stmt = $db->prepare($sql);
 $stmt->bindParam(':id', $id);
 $stmt->execute();
 
-header('Location: home.php');
+header('Location: index.php');
 die();
