@@ -37,7 +37,7 @@ $users = $stmt->fetchAll();
       <td><?= $user['first_name'] ?></td>
       <td><?= $user['last_name'] ?></td>
       <td>
-        <a href="edit.php?id=<?= $user['id'] ?>""><span class="oi oi-pencil"></span></a>
+        <a href="edit.php?id=<?= $user['id'] ?>"><span class="oi oi-pencil"></span></a>
         <a href="delete.php?id=<?= $user['id'] ?>"><span class="oi oi-delete"></span></a>
 
         <?php $isMyId = $user['id'] === $_SESSION['user']['id']; ?>
