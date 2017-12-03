@@ -31,13 +31,13 @@ $users = $stmt->fetchAll();
     </thead>
     <tbody>
     <?php foreach($users as $user): ?>
-    <tr>
+    <tr class="<?= $user['is_active'] === '1' ? '' : 'blocked' ?>">
       <th scope="row"><?= $user['id'] ?></th>
       <td><?= $user['email'] ?></td>
       <td><?= $user['first_name'] ?></td>
       <td><?= $user['last_name'] ?></td>
       <td>
-        <a href="#"><span class="oi oi-pencil"></span></a>
+        <a href="edit.php?id=<?= $user['id'] ?>"><span class="oi oi-pencil"></span></a>
         <a href="delete.php?id=<?= $user['id'] ?>"><span class="oi oi-delete"></span></a>
         <?php if($user['is_active'] === '1'): ?>
           <a href="change_activation.php?id=<?= $user['id'] ?>"><span class="oi oi-ban"></span></a>

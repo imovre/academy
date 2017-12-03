@@ -17,3 +17,7 @@ footer {
   text-align: center;
   line-height: 45px;
 }
+
+.blocked {
+  background-color: red;
+}
