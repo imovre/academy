@@ -14,10 +14,16 @@ echo $header;
 $sql = 'SELECT id, email, first_name, last_name, is_active FROM users';
 
 $isSearch = isset($_GET['q']);
-
 if($isSearch) { $sql .= ' WHERE email LIKE :email'; }
 
-$stmt = $db->prepare($sql);
+$paginator = new Paginator($sql);
+$page = isset($_GET['page']) ? intval($_GET['page']) : 0;
+$limit = isset($_GET['limit']) ? intval($_GET['limit']) : 5;
+$offset = $page * $limit;
+
+$stmt = $db->prepare($paginator->getPaginatedSQL());
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+$stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
 
 if($isSearch) {
   $search = "%{$_GET['q']}%";
@@ -72,6 +78,10 @@ $users = $stmt->fetchAll();
     <?php endforeach; ?>
     </tbody>
   </table>
+  <div class="paginator">
+    <?= $paginator->getLinkPrevious($page, $limit) ?>
+    <?= $paginator->getLinkNext($page, $limit) ?>
+  </div>
 </div>
 
 <?= $footer ?>

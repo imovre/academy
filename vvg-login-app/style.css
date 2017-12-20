@@ -9,7 +9,7 @@ body {
 .login-wrapper { margin-top: 30px; }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: #F8F9FA;
@@ -20,4 +20,8 @@ footer {
 
 .blocked {
   background-color: red;
+}
+
+.not-visible {
+  visibility: hidden;
 }
