@@ -8,6 +8,8 @@ List is also used as a "read more" for students in my courses. It's pretty rando
 
 * [StackOverflow - good answers on "How do MySQL indexes work?"](https://stackoverflow.com/questions/3567981/how-do-mysql-indexes-work)
 
+* [Mathematics for Computer Science](https://courses.csail.mit.edu/6.042/spring17/mcs.pdf)
+
 * [Linux Performance Analysis in 60,000 Milliseconds](https://medium.com/netflix-techblog/linux-performance-analysis-in-60-000-milliseconds-accc10403c55)
 
 * [Computer Science: An Overview: Global Edition](https://www.amazon.com/Computer-Science-Overview-Global/dp/1292061162/ref=dp_ob_image_bk)
