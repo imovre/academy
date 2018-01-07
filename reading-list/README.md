@@ -2,6 +2,10 @@ This page serves as a reminder-list for books/articles that I've read or I want 
 List is also used as a "read more" for students in my courses. It's pretty random but feel free to check it out.
 
 
+* [SQL Keys in Depth](https://begriffs.com/posts/2018-01-01-sql-keys-in-depth.html)
+
+* [Linux Insides - A little bit about a linux kernel](https://github.com/0xAX/linux-insides)
+
 * [Ask HN: What’s your favorite talk from 2017?](https://news.ycombinator.com/item?id=16045859)
 
 * [DestroyAllSoftware.com - one of the best screencasts I've seen](https://www.destroyallsoftware.com/screencasts/catalog)
