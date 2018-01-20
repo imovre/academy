@@ -8,6 +8,8 @@ List is also used as a "read more" for students in my courses. It's pretty rando
 
 * [Ask HN: What’s your favorite talk from 2017?](https://news.ycombinator.com/item?id=16045859)
 
+* [Ten Things I Wish I’d Known About bash](https://zwischenzugs.com/2018/01/06/ten-things-i-wish-id-known-about-bash/)
+
 * [DestroyAllSoftware.com - one of the best screencasts I've seen](https://www.destroyallsoftware.com/screencasts/catalog)
 
 * [StackOverflow - good answers on "How do MySQL indexes work?"](https://stackoverflow.com/questions/3567981/how-do-mysql-indexes-work)
