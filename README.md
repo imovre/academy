@@ -14,7 +14,7 @@ It contains source code for the following courses I have taught or am still teac
 
 - XML programming
 - Programming in Java
-- PHP programming
+- Advanced web service architectures
 
 ## Issues
 If you find any issue or you want to contact me, feel free to do so: davor [ at ] warriorkitty.com.
