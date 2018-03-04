@@ -6,6 +6,8 @@ List is also used as a "read more" for students in my courses. It's pretty rando
 
 * [Linux Insides - A little bit about a linux kernel](https://github.com/0xAX/linux-insides)
 
+* [YouTube - Anders Hejlsberg on Modern Compiler Construction](https://www.youtube.com/watch?v=wSdV1M7n4gQ)
+
 * [Ask HN: What’s your favorite talk from 2017?](https://news.ycombinator.com/item?id=16045859)
 
 * [Ten Things I Wish I’d Known About bash](https://zwischenzugs.com/2018/01/06/ten-things-i-wish-id-known-about-bash/)
