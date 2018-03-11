@@ -9,6 +9,7 @@ It contains source code for the following courses I have taught or am still teac
 
 - Database systems
 - Database systems in the Internet environment
+- Programming database management systems
 
 [Polytechnic of Zagreb](https://www.tvz.hr/?lang=en)
 
