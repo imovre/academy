@@ -65,3 +65,25 @@ BEGIN
     END LOOP;
     CLOSE cur_get_users;
 END;
+
+/
+
+-- cursor with parameter
+DECLARE
+    CURSOR cur_get_users(tmp_filter VARCHAR DEFAULT '') IS
+        SELECT id, name FROM users WHERE name LIKE '%' || tmp_filter || '%';
+    
+    tmp_row cur_get_users%ROWTYPE;
+BEGIN
+    OPEN cur_get_users('Euler');
+    LOOP
+
+        FETCH cur_get_users INTO tmp_row;
+        EXIT WHEN cur_get_users%NOTFOUND;
+        
+        DBMS_OUTPUT.PUT_LINE(tmp_row.id);
+        DBMS_OUTPUT.PUT_LINE(tmp_row.name);
+    
+    END LOOP;
+    CLOSE cur_get_users;
+END;
