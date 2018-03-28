@@ -2,7 +2,7 @@
 -- počinje samoglasnikom.
 
 -- 2. Napiši program koji će pomoću kursora dohvatiti sve korisnike koji imaju
--- parametar jezik postavljen na 'Hrvatski'.
+-- parametar jezik postavljen na 'English'.
 
 -- 3. Napiši program koji će pomoću kursora dohvatiti sve korisnike koji su
 -- direktori (tablica 'company_positions'), a nisu administratori (tablica 'roles').
