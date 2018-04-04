@@ -27,10 +27,12 @@ CREATE TABLE users (
     id NUMBER   NOT NULL,
     first_name VARCHAR(255)   NOT NULL,
     last_name VARCHAR(255)   NOT NULL,
+    full_name VARCHAR(500),
     language_id NUMBER   NOT NULL,
-    mobile VARCHAR(255)   NOT NULL,
+    mobile VARCHAR(255),
     company_position_id NUMBER   NOT NULL,
     role_id NUMBER   NOT NULL,
+    gross_income DECIMAL(10, 2)   NOT NULL,
     CONSTRAINT pk_users PRIMARY KEY (
         id
      )
@@ -56,17 +58,17 @@ INSERT INTO roles VALUES (2, 'User');
 INSERT INTO roles VALUES (3, 'Guest');
 
 INSERT INTO users
-    (id, first_name, last_name, language_id, mobile, company_position_id, role_id)
+    (id, first_name, last_name, language_id, mobile, company_position_id, role_id, gross_income)
 VALUES
-    (1, 'Celina', 'Scott', 1, '098 112 221', 1, 1);
+    (1, 'Celina', 'Scott', 1, '098 112 221', 1, 1, 9000);
 
 INSERT INTO users
-    (id, first_name, last_name, language_id, mobile, company_position_id, role_id)
+    (id, first_name, last_name, language_id, mobile, company_position_id, role_id, gross_income)
 VALUES
-    (2, 'Arron', 'Mason', 1, '091 112 222', 2, 2);
+    (2, 'Arron', 'Mason', 1, '091 112 222', 2, 2, 10000);
 
 INSERT INTO users
-    (id, first_name, last_name, language_id, mobile, company_position_id, role_id)
+    (id, first_name, last_name, language_id, mobile, company_position_id, role_id, gross_income)
 VALUES
-    (3, 'John', 'Doe', 1, '092 112 222', 1, 2);
+    (3, 'John', 'Doe', 1, '092 112 222', 1, 2, 11000);
 
