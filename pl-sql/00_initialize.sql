@@ -33,7 +33,39 @@ CREATE TABLE users (
     company_position_id NUMBER   NOT NULL,
     role_id NUMBER   NOT NULL,
     gross_income DECIMAL(10, 2)   NOT NULL,
+    task_count NUMBER,
     CONSTRAINT pk_users PRIMARY KEY (
+        id
+     )
+);
+
+CREATE TABLE clients (
+    id NUMBER   NOT NULL,
+    name VARCHAR(255)   NOT NULL,
+    description VARCHAR(2048),
+    address VARCHAR(512),
+    task_count NUMBER DEFAULT 0,
+    CONSTRAINT pk_clients PRIMARY KEY (
+        id
+     )
+);
+
+CREATE TABLE tasks (
+    id NUMBER   NOT NULL,
+    name VARCHAR(255)   NOT NULL,
+    description VARCHAR(2048),
+    user_id NUMBER,
+    created_by_id NUMBER NOT NULL,
+    client_id NUMBER,
+    hours_predicted NUMBER,
+    hours_spent NUMBER,
+    hours_diff NUMBER,
+    is_finished NUMBER(1),
+    planned_finish_date DATE,
+    finish_date DATE,
+    is_late NUMBER(1),
+    is_mine NUMBER(1),
+    CONSTRAINT pk_tasks PRIMARY KEY (
         id
      )
 );
@@ -56,6 +88,11 @@ INSERT INTO company_positions VALUES (2, 'Project administrator');
 INSERT INTO roles VALUES (1, 'Administrator');
 INSERT INTO roles VALUES (2, 'User');
 INSERT INTO roles VALUES (3, 'Guest');
+
+INSERT INTO clients (id, name) VALUES (1, 'client 1');
+INSERT INTO clients (id, name) VALUES (2, 'client 2');
+INSERT INTO clients (id, name) VALUES (3, 'client 3');
+INSERT INTO clients (id, name) VALUES (4, 'client 4');
 
 INSERT INTO users
     (id, first_name, last_name, language_id, mobile, company_position_id, role_id, gross_income)
