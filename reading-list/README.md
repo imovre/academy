@@ -10,6 +10,8 @@ List is also used as a "read more" for students in my courses. It's pretty rando
 
 * [Ask HN: What’s your favorite talk from 2017?](https://news.ycombinator.com/item?id=16045859)
 
+* [Developer-Y/cs-video-courses](https://github.com/Developer-Y/cs-video-courses)
+
 * [Ten Things I Wish I’d Known About bash](https://zwischenzugs.com/2018/01/06/ten-things-i-wish-id-known-about-bash/)
 
 * [DestroyAllSoftware.com - one of the best screencasts I've seen](https://www.destroyallsoftware.com/screencasts/catalog)
@@ -25,3 +27,5 @@ List is also used as a "read more" for students in my courses. It's pretty rando
 * [Algebra, Topology, Dierential Calculus, and Optimization Theory For Computer Science and Engineering](https://www.cis.upenn.edu/~jean/math-basics.pdf)
 
 * [D3 Graph Theory – Learn About Graph Theory Interactively](https://mrpandey.github.io/d3graphTheory/index.html)
+
+* [ohshitgit.com](http://ohshitgit.com/)
