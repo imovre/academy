@@ -70,6 +70,31 @@ CREATE TABLE tasks (
      )
 );
 
+CREATE TABLE products (
+    id NUMBER   NOT NULL,
+    name VARCHAR(255)   NOT NULL,
+    description VARCHAR(2048),
+    tax DECIMAL(12,2) NOT NULL,
+    tax_value DECIMAL(12,2),
+    mpc DECIMAL(12,2),
+    vpc DECIMAL(12,2) NOT NULL,
+    product_type VARCHAR(255),
+    product_tax_group VARCHAR(255),
+    expensive_description VARCHAR(255),
+    CONSTRAINT pk_products PRIMARY KEY (
+        id
+     )
+);
+
+CREATE TABLE configurations (
+    id NUMBER   NOT NULL,
+    config_key VARCHAR(255) NOT NULL,
+    config_value VARCHAR(2048),
+    CONSTRAINT pk_configurations PRIMARY KEY (
+        id
+     )
+);
+
 ALTER TABLE users ADD CONSTRAINT fk_users_language_id FOREIGN KEY(language_id)
 REFERENCES languages (id);
 
@@ -93,6 +118,15 @@ INSERT INTO clients (id, name) VALUES (1, 'client 1');
 INSERT INTO clients (id, name) VALUES (2, 'client 2');
 INSERT INTO clients (id, name) VALUES (3, 'client 3');
 INSERT INTO clients (id, name) VALUES (4, 'client 4');
+
+INSERT INTO products (id, name, tax, vpc) VALUES (1, 'product 1', 0.25, 500);
+INSERT INTO products (id, name, tax, vpc) VALUES (2, 'product 2', 0.15, 1000);
+INSERT INTO products (id, name, tax, vpc) VALUES (3, 'product 3', 0.25, 200);
+INSERT INTO products (id, name, tax, vpc) VALUES (4, 'product 4', 0.25, 100);
+INSERT INTO products (id, name, tax, vpc) VALUES (5, 'product 5', 0.15, 170);
+INSERT INTO products (id, name, tax, vpc) VALUES (6, 'product 6', 0.25, 22);
+
+INSERT INTO configurations (id, config_key, config_value) VALUES (1, 'tax', '0.25');
 
 INSERT INTO users
     (id, first_name, last_name, language_id, mobile, company_position_id, role_id, gross_income)
