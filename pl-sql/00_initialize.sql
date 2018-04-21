@@ -39,6 +39,52 @@ CREATE TABLE users (
      )
 );
 
+CREATE TABLE place (
+    id NUMBER,
+    user_id NUMBER NOT NULL,
+    bruto_placa DECIMAL(10, 2)   NOT NULL,
+    broj_djece NUMBER DEFAULT 0 NOT NULL,
+    broj_uzdrzavanih_osoba NUMBER DEFAULT 0 NOT NULL,
+    mirovinski_stup_1 DECIMAL(10, 2),
+    mirovinski_stup_2 DECIMAL(10, 2),
+    ukupni_doprinosi_iz_bruta DECIMAL(10, 2),
+    oporezivi_dohodak DECIMAL(10, 2),
+    ukupni_porez DECIMAL(10, 2),
+    ukupni_prirez DECIMAL(10, 2),
+    ukupni_porez_i_prirez DECIMAL(10, 2),
+    porezni_razred_id NUMBER,
+    CONSTRAINT pk_place PRIMARY KEY (
+        id
+     )
+);
+
+CREATE TABLE olaksice (
+    id NUMBER,
+    naziv VARCHAR(255),
+    vrijednost DECIMAL(10, 2),
+    CONSTRAINT pk_place PRIMARY KEY (
+        id
+     )
+);
+
+CREATE TABLE porezni_razredi (
+    id NUMBER,
+    naziv VARCHAR(255),
+    vrijednost DECIMAL(10, 2),
+    CONSTRAINT pk_porezni_razredi PRIMARY KEY (
+        id
+     )
+);
+
+CREATE TABLE olaksica_user (
+    id NUMBER,
+    user_id NUMBER NOT NULL,
+    olaksica_id NUMBER NOT NULL,
+    CONSTRAINT pk_olaksica_user PRIMARY KEY (
+        id
+     )
+);
+
 CREATE TABLE clients (
     id NUMBER   NOT NULL,
     name VARCHAR(255)   NOT NULL,
@@ -86,6 +132,16 @@ CREATE TABLE products (
      )
 );
 
+CREATE TABLE cities (
+    id NUMBER   NOT NULL,
+    name VARCHAR(255)   NOT NULL,
+    surtax DECIMAL(5,2) NOT NULL,
+    CONSTRAINT pk_cities PRIMARY KEY (
+        id
+     )
+);
+
+
 CREATE TABLE configurations (
     id NUMBER   NOT NULL,
     config_key VARCHAR(255) NOT NULL,
@@ -119,12 +175,20 @@ INSERT INTO clients (id, name) VALUES (2, 'client 2');
 INSERT INTO clients (id, name) VALUES (3, 'client 3');
 INSERT INTO clients (id, name) VALUES (4, 'client 4');
 
+INSERT INTO cities (id, name, surtax) VALUES (1, 'Zagreb', 0.19);
+INSERT INTO cities (id, name, surtax) VALUES (2, 'Rijeka', 0.15);
+
 INSERT INTO products (id, name, tax, vpc) VALUES (1, 'product 1', 0.25, 500);
 INSERT INTO products (id, name, tax, vpc) VALUES (2, 'product 2', 0.15, 1000);
 INSERT INTO products (id, name, tax, vpc) VALUES (3, 'product 3', 0.25, 200);
 INSERT INTO products (id, name, tax, vpc) VALUES (4, 'product 4', 0.25, 100);
 INSERT INTO products (id, name, tax, vpc) VALUES (5, 'product 5', 0.15, 170);
 INSERT INTO products (id, name, tax, vpc) VALUES (6, 'product 6', 0.25, 22);
+
+INSERT INTO olaksice (id, name, vrijednost) VALUES (1, 'Osnovni osobni odbitak', 3800);
+
+INSERT INTO porezni_razredi (id, name, vrijednost_do, vrijednost) VALUES (1, '24%', 17500, 0.24);
+INSERT INTO porezni_razredi (id, name, vrijednost_do, vrijednost) VALUES (2, '36%', null, 0.36);
 
 INSERT INTO configurations (id, config_key, config_value) VALUES (1, 'tax', '0.25');
 
