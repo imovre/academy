@@ -42,7 +42,7 @@ CREATE TABLE users (
 CREATE TABLE place (
     id NUMBER,
     user_id NUMBER NOT NULL,
-    bruto_placa DECIMAL(10, 2)   NOT NULL,
+    bruto_placa DECIMAL(10, 2) DEFAULT 0 NOT NULL,
     broj_djece NUMBER DEFAULT 0 NOT NULL,
     broj_uzdrzavanih_osoba NUMBER DEFAULT 0 NOT NULL,
     mirovinski_stup_1 DECIMAL(10, 2),
@@ -62,7 +62,7 @@ CREATE TABLE olaksice (
     id NUMBER,
     naziv VARCHAR(255),
     vrijednost DECIMAL(10, 2),
-    CONSTRAINT pk_place PRIMARY KEY (
+    CONSTRAINT pk_olaksice PRIMARY KEY (
         id
      )
 );
@@ -70,6 +70,7 @@ CREATE TABLE olaksice (
 CREATE TABLE porezni_razredi (
     id NUMBER,
     naziv VARCHAR(255),
+    vrijednost_do DECIMAL(10, 2),
     vrijednost DECIMAL(10, 2),
     CONSTRAINT pk_porezni_razredi PRIMARY KEY (
         id
@@ -185,10 +186,10 @@ INSERT INTO products (id, name, tax, vpc) VALUES (4, 'product 4', 0.25, 100);
 INSERT INTO products (id, name, tax, vpc) VALUES (5, 'product 5', 0.15, 170);
 INSERT INTO products (id, name, tax, vpc) VALUES (6, 'product 6', 0.25, 22);
 
-INSERT INTO olaksice (id, name, vrijednost) VALUES (1, 'Osnovni osobni odbitak', 3800);
+INSERT INTO olaksice (id, naziv, vrijednost) VALUES (1, 'Osnovni osobni odbitak', 3800);
 
-INSERT INTO porezni_razredi (id, name, vrijednost_do, vrijednost) VALUES (1, '24%', 17500, 0.24);
-INSERT INTO porezni_razredi (id, name, vrijednost_do, vrijednost) VALUES (2, '36%', null, 0.36);
+INSERT INTO porezni_razredi (id, naziv, vrijednost_do, vrijednost) VALUES (1, '24%', 17500, 0.24);
+INSERT INTO porezni_razredi (id, naziv, vrijednost_do, vrijednost) VALUES (2, '36%', 1000000, 0.36);
 
 INSERT INTO configurations (id, config_key, config_value) VALUES (1, 'tax', '0.25');
 
@@ -207,3 +208,6 @@ INSERT INTO users
 VALUES
     (3, 'John', 'Doe', 1, '092 112 222', 1, 2, 11000);
 
+
+
+INSERT INTO olaksica_user (id, olaksica_id, user_id) VALUES (1, 1, 1);
