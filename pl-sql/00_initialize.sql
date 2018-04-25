@@ -152,6 +152,15 @@ CREATE TABLE configurations (
      )
 );
 
+CREATE TABLE mirovinski_stupovi (
+    id NUMBER   NOT NULL,
+    naziv VARCHAR(255) NOT NULL,
+    vrijednost DECIMAL(5, 2),
+    CONSTRAINT pk_mirovinski_stupovi PRIMARY KEY (
+        id
+     )
+);
+
 ALTER TABLE users ADD CONSTRAINT fk_users_language_id FOREIGN KEY(language_id)
 REFERENCES languages (id);
 
@@ -187,6 +196,9 @@ INSERT INTO products (id, name, tax, vpc) VALUES (5, 'product 5', 0.15, 170);
 INSERT INTO products (id, name, tax, vpc) VALUES (6, 'product 6', 0.25, 22);
 
 INSERT INTO olaksice (id, naziv, vrijednost) VALUES (1, 'Osnovni osobni odbitak', 3800);
+
+INSERT INTO mirovinski_stupovi (id, naziv, vrijednost) VALUES (1, 'I. mirovinski stup', 0.15);
+INSERT INTO mirovinski_stupovi (id, naziv, vrijednost) VALUES (2, 'II. mirovinski stup', 0.05);
 
 INSERT INTO porezni_razredi (id, naziv, vrijednost_do, vrijednost) VALUES (1, '24%', 17500, 0.24);
 INSERT INTO porezni_razredi (id, naziv, vrijednost_do, vrijednost) VALUES (2, '36%', 1000000, 0.36);
