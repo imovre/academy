@@ -34,9 +34,10 @@ CREATE TABLE users (
     role_id NUMBER   NOT NULL,
     gross_income DECIMAL(10, 2)   NOT NULL,
     task_count NUMBER,
+    city_id NUMBER,
     CONSTRAINT pk_users PRIMARY KEY (
         id
-     )
+    )
 );
 
 CREATE TABLE place (
@@ -185,7 +186,7 @@ INSERT INTO clients (id, name) VALUES (2, 'client 2');
 INSERT INTO clients (id, name) VALUES (3, 'client 3');
 INSERT INTO clients (id, name) VALUES (4, 'client 4');
 
-INSERT INTO cities (id, name, surtax) VALUES (1, 'Zagreb', 0.19);
+INSERT INTO cities (id, name, surtax) VALUES (1, 'Zagreb', 0.18);
 INSERT INTO cities (id, name, surtax) VALUES (2, 'Rijeka', 0.15);
 
 INSERT INTO products (id, name, tax, vpc) VALUES (1, 'product 1', 0.25, 500);
@@ -206,19 +207,19 @@ INSERT INTO porezni_razredi (id, naziv, vrijednost_do, vrijednost) VALUES (2, '3
 INSERT INTO configurations (id, config_key, config_value) VALUES (1, 'tax', '0.25');
 
 INSERT INTO users
-    (id, first_name, last_name, language_id, mobile, company_position_id, role_id, gross_income)
+    (id, first_name, last_name, language_id, mobile, company_position_id, role_id, gross_income, city_id)
 VALUES
-    (1, 'Celina', 'Scott', 1, '098 112 221', 1, 1, 9000);
+    (1, 'Celina', 'Scott', 1, '098 112 221', 1, 1, 9000, 1);
 
 INSERT INTO users
-    (id, first_name, last_name, language_id, mobile, company_position_id, role_id, gross_income)
+    (id, first_name, last_name, language_id, mobile, company_position_id, role_id, gross_income, city_id)
 VALUES
-    (2, 'Arron', 'Mason', 1, '091 112 222', 2, 2, 10000);
+    (2, 'Arron', 'Mason', 1, '091 112 222', 2, 2, 10000, 1);
 
 INSERT INTO users
-    (id, first_name, last_name, language_id, mobile, company_position_id, role_id, gross_income)
+    (id, first_name, last_name, language_id, mobile, company_position_id, role_id, gross_income, city_id)
 VALUES
-    (3, 'John', 'Doe', 1, '092 112 222', 1, 2, 11000);
+    (3, 'John', 'Doe', 1, '092 112 222', 1, 2, 11000, 1);
 
 
 
