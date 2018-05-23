@@ -33,6 +33,7 @@ CREATE TABLE users (
     company_position_id NUMBER   NOT NULL,
     role_id NUMBER   NOT NULL,
     gross_income DECIMAL(10, 2)   NOT NULL,
+    net_income DECIMAL(10, 2) DEFAULT 0,
     task_count NUMBER,
     city_id NUMBER,
     CONSTRAINT pk_users PRIMARY KEY (

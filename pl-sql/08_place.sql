@@ -28,7 +28,7 @@ CREATE OR REPLACE FUNCTION II_mirovinski_stup (user_id NUMBER)
 RETURN DECIMAL IS
     result DECIMAL;
 BEGIN
-    result := placa_korisnika(user_id) * 0.5;
+    result := placa_korisnika(user_id) * 0.05;
     return result;
 END;
 
@@ -97,8 +97,8 @@ END;
 /
 
 CREATE OR REPLACE FUNCTION porezni_razred(gross_income DECIMAL)
-RETURN DECIMAL IS
-    result DECIMAL;
+RETURN NUMBER IS
+    result DECIMAL(10, 2);
 BEGIN
     SELECT MIN(vrijednost) INTO result FROM porezni_razredi WHERE gross_income <= vrijednost_do;
     return result;
@@ -281,3 +281,5 @@ END;
 BEGIN
     DBMS_OUTPUT.PUT_LINE(ozljede_tablica(10000));
 END;
+
+/
