@@ -283,3 +283,72 @@ BEGIN
 END;
 
 /
+
+CREATE OR REPLACE FUNCTION neto_izracun(user_id NUMBER)
+RETURN NUMBER IS
+    result DECIMAL(10, 2);
+    bruto DECIMAL(10, 2);
+    mirovine_ukupno DECIMAL(10, 2);
+    olaksice DECIMAL(10, 2);
+    oporezivo DECIMAL(10, 2);
+    porez DECIMAL(10, 2);
+    prirez DECIMAL(10, 2);
+BEGIN
+    bruto := placa_korisnika(user_id);
+    mirovine_ukupno := I_mirovinski_stup(user_id) + II_mirovinski_stup(user_id);
+    olaksice := ukupna_olaksica(user_id);
+    oporezivo := bruto - mirovine_ukupno - olaksice;
+    porez := ukupni_porez(oporezivo, porezni_razred(bruto));
+    prirez := ukupni_prirez(porez, user_id);
+    result := bruto - mirovine_ukupno - porez - prirez;
+    RETURN result;
+END;
+
+/
+
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(neto_izracun(1));
+END;
+
+/
+
+CREATE OR REPLACE PROCEDURE spremi_neto(
+    in_user_id IN NUMBER,   -- id of the user
+    in_neto IN DECIMAL
+) IS
+BEGIN
+    UPDATE users
+    SET net_income = in_neto  
+    WHERE users.id = in_user_id;
+    COMMIT;
+EXCEPTION   -- handle any errors
+    WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE(DBMS_UTILITY.FORMAT_ERROR_BACKTRACE);  -- show details
+    rollback;
+    raise;
+END spremi_neto;
+
+/
+
+-- obracun za sve zaposlenike
+DECLARE
+    CURSOR cur_get_users IS
+        SELECT
+            id, first_name, last_name, gross_income, city_id
+        FROM users;
+    
+    tmp_row cur_get_users%ROWTYPE;
+    neto DECIMAL(10, 2);
+BEGIN
+    OPEN cur_get_users;
+    LOOP
+
+        FETCH cur_get_users INTO tmp_row;
+        EXIT WHEN cur_get_users%NOTFOUND;
+        
+        neto := neto_izracun(tmp_row.id);
+        spremi_neto(tmp_row.id, neto);
+    
+    END LOOP;
+    CLOSE cur_get_users;
+END;
