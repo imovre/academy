@@ -7,3 +7,6 @@ Additional reading:
 
 [Relational DBMS Internals](http://pages.di.unipi.it/ghelli/bd2/DBMS-Internals.pdf)
 
+Tools:
+
+[quickdatabasediagrams](https://www.quickdatabasediagrams.com/)
