@@ -1,3 +1,7 @@
+Mandatory reading:
+
+[TutorialsPoint - SQL Tutorial](https://www.tutorialspoint.com/sql/index.htm)
+
 
 Additional reading / watching:
 
