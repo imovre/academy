@@ -1,8 +1,4 @@
 
-Mandatory reading:
-
-[TutorialsPoint - PL/SQL Tutorial](https://www.tutorialspoint.com/plsql/) 
-
 Additional reading / watching:
 
 [Pluralsight - Introduction to SQL](https://app.pluralsight.com/library/courses/introduction-to-sql)
