@@ -13,6 +13,8 @@ Additional reading / watching:
 
 [Pluralsight - Algorithms and Data Structures - Part 2](https://app.pluralsight.com/library/courses/ads2)
 
-Tools:
+Other:
 
 [quickdatabasediagrams](https://www.quickdatabasediagrams.com/)
+
+[Oracle Database Cheatsheet](https://en.wikibooks.org/wiki/Oracle_Database/SQL_Cheatsheet)
