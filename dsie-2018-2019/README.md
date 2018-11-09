@@ -12,5 +12,17 @@
  - [Laravel 5.7 From Scratch ](https://laracasts.com/series/laravel-from-scratch-2018)
  
 ## Tools
+
  - [SQLDbm.com](https://sqldbm.com)
  - [Quick Database Diagrams](https://www.quickdatabasediagrams.com/)
+
+## Reminder
+
+| element     | direktorij                         |
+|-------------|------------------------------------|
+| application | ~/application                      |
+| controller  | ~/application/app/Http/Controllers |
+| model       | ~/application/app                  |
+| route       | ~/application/routes/web.php       |
+| view        | ~/application/resources/views      |
+| migrations  | ~/application/database/migrations  |
