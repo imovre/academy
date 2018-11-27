@@ -5,6 +5,8 @@
  - [Architecture](https://my.pcloud.com/publink/show?code=XZTeMM7ZiYlm4xVLVLjGzlrSMxGeTLJJKYdX)
  - [SQL](https://my.pcloud.com/publink/show?code=XZ49MM7Z954Ao7VuweHCXIxrtSfwkRR1mDlV)
  - [HTML, CSS](https://my.pcloud.com/publink/show?code=XZO9MM7Zf9rCFsjTt1jYgJWgDaSx5zezTfYX)
+ - [PHP](https://my.pcloud.com/publink/show?code=XZ728g7ZMgcuuFjYpfLazcYIGHAYeH508lTV)
+ - [Priprema](https://my.pcloud.com/publink/show?code=XZ9B8g7ZTqBjwo7wfeHtzq3GX8mioyhS5gTy)
 
 ## Additional reading / watching
 
