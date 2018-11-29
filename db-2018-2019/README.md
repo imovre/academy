@@ -22,3 +22,5 @@ Other:
 [quickdatabasediagrams](https://www.quickdatabasediagrams.com/)
 
 [Oracle Database Cheatsheet](https://en.wikibooks.org/wiki/Oracle_Database/SQL_Cheatsheet)
+
+[1. kol - priprema](https://my.pcloud.com/publink/show?code=XZzqWg7Z9LGcR88GoW0d41FWL5wbMRVMe8J7)
