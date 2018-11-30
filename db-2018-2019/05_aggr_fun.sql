@@ -62,7 +62,7 @@ WHERE
     extract(YEAR FROM datumupisa) =
     extract(YEAR FROM add_months(sysdate, -12));
 
-10.) Ispisi sve studente koji stanuju u zupaniji Grad Zagreb
+10. Ispisi sve studente koji stanuju u zupaniji Grad Zagreb
      te su upisali smjer informatike u 2012 godini.
 
 SELECT * FROM studenti
