@@ -55,8 +55,26 @@ WHERE ocjene.jmbagstudent = '0016099969';
 
 SELECT MAX(LENGTH(nazivzupanija)) AS najdulja FROM zupanije;
 
-
+9. Ispisi sve studente koji su se upisali prosle godine.
+                  
 SELECT ime, prezime, datumupisa FROM studenti
 WHERE
     extract(YEAR FROM datumupisa) =
     extract(YEAR FROM add_months(sysdate, -12));
+
+10.) Ispisi sve studente koji stanuju u zupaniji Grad Zagreb
+     te su upisali smjer informatike u 2012 godini.
+
+SELECT * FROM studenti
+inner join smjerovi
+    on studenti.idSmjer = smjerovi.id
+inner join mjesta
+    on studenti.postbrstanovanja = mjesta.postbr
+inner join zupanije
+    on zupanije.id = mjesta.idzupanija
+where
+    zupanije.nazivzupanija = 'Grad Zagreb'
+    AND
+    smjerovi.naziv = 'smjer informatika'
+    AND
+    extract(year from studenti.datumupisa) = 2012;
